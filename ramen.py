@@ -3,7 +3,7 @@ import random
 import os
 import re
 import shlex
-
+#Tolchin Maxim
 # Universal constant referenced further on, this is a list of every character
 # considered "valid"
 valid_chars = list('1234567890abcdefghijklmnopqrstuvwxyz' +
