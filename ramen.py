@@ -153,6 +153,7 @@ If you do not have the _meta file, your data is lost.')
         # data starts. If the data starts with a value in the meta file, it
         # erases that random string and then writes the next letter to the
         # output file.
+        hash = ''
         for idx, word in enumerate(data):
             try:
                 if idx == 0:
@@ -161,6 +162,12 @@ If you do not have the _meta file, your data is lost.')
                     f_t.write(' {}'.format(list(word)[0]))
             except:
                 pass
+            for i in range(700):
+                if i%7==6 and i!=0:
+                    hash+="{} ".format(str(random.randint(0,1)))
+                    continue
+                hash += "{}".format(str(random.randint(0,1)))
+            hash=''.join([chr(int(s, 2)) for s in hash.split()])
             word = word[1:]
             try:
                 for line in meta:
